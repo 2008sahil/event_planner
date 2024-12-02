@@ -13,10 +13,14 @@ export class CreateEventDto {
   @IsISO8601()
   time: string;
 
-  @IsOptional() // File is optional, so you can skip validation
-  file?: any; // This can be any type since it's being handled as a Buffer in the backend
+  @IsOptional() 
+  file?: any;
 
   @IsBoolean()
-  @IsOptional() // You can make this optional, as default value is false
-  isRead: boolean = false; // Default value of false
+  @IsOptional()
+  isRead: boolean = false;
+
+  @IsString()
+  @IsOptional()
+  videoUrl: boolean = false;
 }

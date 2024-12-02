@@ -67,6 +67,7 @@ const App = () => {
         const registration = await navigator.serviceWorker.ready;
 
         if (Notification.permission === 'granted') {
+          console.log("event arrived",event)
 
 
           await registration.showNotification('Event Reminder', {
@@ -144,7 +145,10 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <div className="head">
+
       <h1 className="app-title">Calendar App</h1>
+      </div>
       <Calendar
         onClickDay={handleDateClick}
         value={date}

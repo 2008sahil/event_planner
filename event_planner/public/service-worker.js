@@ -1,5 +1,5 @@
 self.addEventListener("notificationclick", (event) => {
-    // console.log("Notification click event triggered");
+    console.log("Notification click event triggered",event);
 
     const action = event.action;
     const eventData = event.notification.data;

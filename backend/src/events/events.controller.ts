@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param, Put, Delete, UploadedFile, UseInterceptors } from "@nestjs/common";
+import { Controller, Get, Post, Body, Param, Put, Delete, UploadedFile, UseInterceptors ,BadRequestException} from "@nestjs/common";
 import { CreateEventDto } from "./dto/create-event.dto";
 import { FileInterceptor } from "@nestjs/platform-express";
 
@@ -10,10 +10,17 @@ export class EventsController {
   @UseInterceptors(
     FileInterceptor("file")
   )
-
-
-
   create(@Body() createEventDto: CreateEventDto, @UploadedFile() file: Express.Multer.File) {
+
+      const allowedTypes = ['image/jpeg', 'image/png'];
+    if (file?.mimetype && !allowedTypes.includes(file.mimetype)) {
+      throw new BadRequestException('Invalid file type');
+    }
+
+    const maxSize = 5 * 1024 * 1024; // 5MB
+      if (file && file.size > maxSize) {
+        throw new BadRequestException('File is too large. Maximum allowed size is 5MB.');
+      }
 
     const fileBase64 = file ? this.convertFileToBase64(file) : null;
 
