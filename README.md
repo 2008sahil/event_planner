@@ -1,6 +1,10 @@
-# Event Planner App
+
+
+# Event Planner
+
 
 This is an Event Planner web application designed to help users plan and schedule events. The app allows users to create events, set their schedules, and receive automatic notifications when the event time occurs.
+
 
 ## Project Overview
 
@@ -17,33 +21,37 @@ To get started with the project, follow these steps:
 1. **Clone the Repository**: Begin by cloning this repository to your local machine.
 
    ```bash
-   git clone https://github.com/your-username/event-planner.git
-   cd event-planner
-Install Dependencies: You will need Node.js and npm (Node Package Manager) installed on your machine. Install the required server and client dependencies.
+   git clone https://github.com/2001sahil/event_planner.git
+   ```
 
-bash
-Copy code
-# Install backend dependencies
-cd backend
-npm install
+2. **Install Dependencies**: You will need Node.js and npm (Node Package Manager) installed on your machine. Install the required server and client dependencies.
 
-# Install frontend dependencies
-cd ../event_planner
-npm install
-Start the Backend:
+   ```bash
+   # Install server dependencies
+   cd backend
+   npm install
 
-In the backend directory, start the Node.js server:
+   # Install client dependencies
+   cd event_planner
+   npm install
+   ```
 
-bash
-Copy code
-npm run:dev
-Start the Frontend:
+4. **Start the Server and Client**:
 
-In the event_planner directory, start the React frontend:
+   - In the `backend` directory, start the Node.js server:
 
-bash
-Copy code
-npm start
-Open the Application:
+     ```bash
+     npm run:dev
+     ```
 
-The application should now be running locally. Open your web browser and navigate to http://localhost:3000 to access the Event Planner.
+   - In the `frontend` directory, start the React client:
+
+     ```bash
+     npm start
+     ```
+
+5. **Open the Application**:
+
+   The application should now be running locally. Open your web browser and navigate to `http://localhost:3000` to access the app.
+
+
