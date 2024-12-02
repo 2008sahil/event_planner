@@ -18,6 +18,7 @@ const EventModal = ({ date, selectedEvent, onClose }) => {
     }
   }, [selectedEvent]);
 
+  
   const handleSave = async () => {
     const formData = new FormData();
     formData.append("title", title);

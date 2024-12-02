@@ -12,6 +12,7 @@ export class EventsController {
   )
 
 
+
   create(@Body() createEventDto: CreateEventDto, @UploadedFile() file: Express.Multer.File) {
 
     const fileBase64 = file ? this.convertFileToBase64(file) : null;
