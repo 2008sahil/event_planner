@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+dist/
+build/
+
+# React (event_planner)
+/event_planner/node_modules/
+/event_planner/build/
+
+# NestJS (backend)
+/backend/node_modules/
+/backend/dist/
