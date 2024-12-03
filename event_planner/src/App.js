@@ -43,23 +43,24 @@ const App = () => {
           );
         }
       });
-    }
+    };
+    fetchEvents();
   }, []);
 
 
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.addEventListener("message", (event) => {
-        const { type, event: updatedEvent } = event.data;
+  // useEffect(() => {
+  //   if ("serviceWorker" in navigator) {
+  //     navigator.serviceWorker.addEventListener("message", (event) => {
+  //       const { type, event: updatedEvent } = event.data;
 
-        if (type === "event-updated") {
-          setEvents((prevEvents) =>
-            prevEvents.map((e) => (e.id === updatedEvent.id ? updatedEvent : e))
-          );
-        }
-      });
-    }
-  }, []);
+  //       if (type === "event-updated") {
+  //         setEvents((prevEvents) =>
+  //           prevEvents.map((e) => (e.id === updatedEvent.id ? updatedEvent : e))
+  //         );
+  //       }
+  //     });
+  //   }
+  // }, []);
 
   const sendNotification = async (event) => {
     if ('serviceWorker' in navigator) {
@@ -95,9 +96,9 @@ const App = () => {
     }
   };
 
-  useEffect(() => {
-    fetchEvents();
-  }, []);
+  // useEffect(() => {
+  //   fetchEvents();
+  // }, []);
 
   useEffect(() => {
     const now = new Date();
